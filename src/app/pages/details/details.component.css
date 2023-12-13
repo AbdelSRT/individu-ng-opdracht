@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.card{
+    min-width: 18rem;
+    min-height: 27rem;
+}
+
+.footer{
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}

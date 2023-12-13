@@ -1,0 +1,23 @@
+@if (pokemon){
+
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header
+      ><mat-card-title>{{ pokemon.name }}</mat-card-title
+      ><mat-card-subtitle>#{{ pokemon.id }}</mat-card-subtitle></mat-card-header
+    ><img
+      mat-card-image
+      [src]="
+        pokemon.sprites.versions['generation-v']['black-white'].animated
+          .front_default
+      "
+    />
+    <mat-card-footer class="footer">
+      @for (type of pokemon.types; track pokemon.name) {
+      <mat-chip-option>{{type.type.name}}</mat-chip-option>
+    }
+    </mat-card-footer>
+  </mat-card>
+</div>
+
+}
