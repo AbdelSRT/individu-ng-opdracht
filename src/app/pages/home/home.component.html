@@ -1,6 +1,15 @@
 <mat-list role="list">
-  @for (pokemon of pokemons; track pokemon.url ){
-  <mat-list-item (click)="router.navigate(['pokemon', pokemon.name])" role="listitem" style="cursor: pointer;">{{ pokemon.name }}</mat-list-item>
-
+  @for (pokemon of pokemons; track pokemon.url) {
+    <div class="pokemonLine">
+      <mat-list-item
+        (click)="router.navigate(['pokemon', pokemon.name])"
+        role="listitem"
+        style="cursor: pointer"
+        >{{ pokemonsService.toUpperCase(pokemon.name) }}
+        @if (pokemonsService.favoriteName(pokemon)) {
+          <mat-icon>favorite</mat-icon>
+        }
+      </mat-list-item>
+    </div>
   }
 </mat-list>

@@ -1,23 +1,52 @@
-@if (pokemon){
-
-<div class="container">
-  <mat-card class="card">
-    <mat-card-header
-      ><mat-card-title>{{ pokemon.name }}</mat-card-title
-      ><mat-card-subtitle>#{{ pokemon.id }}</mat-card-subtitle></mat-card-header
-    ><img
-      mat-card-image
-      [src]="
-        pokemon.sprites.versions['generation-v']['black-white'].animated
-          .front_default
-      "
-    />
-    <mat-card-footer class="footer">
-      @for (type of pokemon.types; track pokemon.name) {
-      <mat-chip-option>{{type.type.name}}</mat-chip-option>
-    }
-    </mat-card-footer>
-  </mat-card>
-</div>
-
+@if (pokemon) {
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-header
+        ><mat-card-title>{{
+          pokemonsService.toUpperCase(pokemon.name)
+        }}</mat-card-title
+        ><mat-card-subtitle
+          >#{{ pokemon.id }}</mat-card-subtitle
+        ></mat-card-header
+      ><img
+        mat-card-image
+        [src]="
+          pokemon.sprites.versions['generation-v']['black-white'].animated
+            .front_default
+        "
+      />
+      <mat-card-footer class="footer">
+        @for (type of pokemon.types; track pokemon.name) {
+          <mat-chip-option>{{
+            pokemonsService.toUpperCase(type.type.name)
+          }}</mat-chip-option>
+        }
+      </mat-card-footer>
+      @if (pokemonsService.isItInHere(pokemon)) {
+        <mat-card-footer class="button">
+          <button
+            button
+            mat-raised-button
+            color="warn"
+            class="add"
+            (click)="pokemonsService.deleteFavoriet(pokemon)"
+          >
+            Verwijderen
+          </button>
+        </mat-card-footer>
+      } @else {
+        <mat-card-footer class="button">
+          <button
+            button
+            mat-raised-button
+            color="accent"
+            class="add"
+            (click)="pokemonsService.favoriet(pokemon)"
+          >
+            Toevoegen
+          </button>
+        </mat-card-footer>
+      }
+    </mat-card>
+  </div>
 }

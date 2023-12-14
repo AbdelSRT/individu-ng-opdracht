@@ -1,0 +1,22 @@
+@if (pokemonsService.allFavorites[0]) {
+  @for (favoriet of pokemonsService.allFavorites; track favoriet.id) {
+    <mat-list role="list">
+      <mat-list-item
+        role="listitem"
+        (click)="router.navigate(['pokemon', favoriet.name])"
+        style="cursor: pointer"
+        ><button
+          mat-fab
+          color="basic"
+          aria-label="Example icon button with a delete icon"
+          class="deleteBtn"
+          (click)="pokemonsService.deleteFavoriet(favoriet)"
+        >
+          <mat-icon>delete</mat-icon></button
+        >{{ pokemonsService.toUpperCase(favoriet.name) }}</mat-list-item
+      >
+    </mat-list>
+  }
+} @else {
+  <h1>Geen favorieten gevonden</h1>
+}

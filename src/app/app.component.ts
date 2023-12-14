@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { PokemonsService } from './services/pokemons.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,10 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private pokemonsService: PokemonsService) {}
 
-
-  
+  ngOnInit(): void {
+    this.pokemonsService.loadHeroes();
+  }
 }

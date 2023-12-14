@@ -15,7 +15,14 @@ export const routes: Routes = [
         path: 'pokemon/:name',
         loadComponent: () =>
           import('./pages/details/details.component').then(
-            (c) => c.DetailsComponent
+            (c) => c.DetailsComponent,
+          ),
+      },
+      {
+        path: 'favorieten',
+        loadComponent: () =>
+          import('./pages/favorieten/favorieten.component').then(
+            (c) => c.FavorietenComponent,
           ),
       },
     ],

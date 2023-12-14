@@ -6,7 +6,7 @@
 }
 
 .card{
-    min-width: 18rem;
+    min-width: 19rem;
     min-height: 27rem;
 }
 
@@ -14,4 +14,16 @@
     display: flex;
     gap: 0.5rem;
     margin-left: 2rem;
+}
+
+.button{
+    margin-top: 1rem;
+    margin-right: 12px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+img{
+    max-height: 24rem;
 }

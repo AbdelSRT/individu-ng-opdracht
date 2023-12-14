@@ -12,5 +12,5 @@ import { Router, RouterOutlet } from '@angular/router';
   styleUrl: './main-layout.component.css',
 })
 export class MainLayoutComponent {
-  constructor(public router: Router){}
+  constructor(public router: Router) {}
 }
