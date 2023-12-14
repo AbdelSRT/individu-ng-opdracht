@@ -17,9 +17,7 @@
       />
       <mat-card-footer class="footer">
         @for (type of pokemon.types; track pokemon.name) {
-          <mat-chip-option>{{
-            pokemonsService.toUpperCase(type.type.name)
-          }}</mat-chip-option>
+          <mat-chip-option>{{ type.type.name }}</mat-chip-option>
         }
       </mat-card-footer>
       @if (pokemonsService.isItInHere(pokemon)) {
