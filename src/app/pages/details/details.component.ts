@@ -5,10 +5,12 @@ import { Pokemon } from '../../components/models';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { TitleCasePipe } from '@angular/common';
+
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [MatCardModule, MatChipsModule, MatButtonModule],
+  imports: [MatCardModule, MatChipsModule, MatButtonModule, TitleCasePipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })

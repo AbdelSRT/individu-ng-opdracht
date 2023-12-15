@@ -5,7 +5,7 @@
         (click)="router.navigate(['pokemon', pokemon.name])"
         role="listitem"
         style="cursor: pointer"
-        >{{ pokemonsService.toUpperCase(pokemon.name) }}
+        >{{ pokemon.name | titlecase }}
         @if (pokemonsService.favoriteName(pokemon)) {
           <mat-icon>favorite</mat-icon>
         }

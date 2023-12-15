@@ -2,9 +2,7 @@
   <div class="container">
     <mat-card class="card">
       <mat-card-header
-        ><mat-card-title>{{
-          pokemonsService.toUpperCase(pokemon.name)
-        }}</mat-card-title
+        ><mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title
         ><mat-card-subtitle
           >#{{ pokemon.id }}</mat-card-subtitle
         ></mat-card-header
