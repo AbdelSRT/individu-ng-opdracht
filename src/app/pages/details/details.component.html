@@ -1,6 +1,6 @@
 @if (pokemon) {
   <div class="container">
-    <mat-card class="card">
+    <mat-card class="card" [ngClass]="getCardClass(pokemon)">
       <mat-card-header
         ><mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title
         ><mat-card-subtitle

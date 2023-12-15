@@ -5,12 +5,18 @@ import { Pokemon } from '../../components/models';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
-import { TitleCasePipe } from '@angular/common';
+import { TitleCasePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [MatCardModule, MatChipsModule, MatButtonModule, TitleCasePipe],
+  imports: [
+    MatCardModule,
+    MatChipsModule,
+    MatButtonModule,
+    TitleCasePipe,
+    NgClass,
+  ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
@@ -31,14 +37,7 @@ export class DetailsComponent implements OnInit {
       }
     });
   }
-
-  /*
-  favoriet(pokemon: Pokemon) {
-    for (let i = 0; i < this.allFavorites.length; i++) {
-      if (pokemon.name !== this.allFavorites[i].name) {
-        this.allFavorites.push(pokemon);
-        console.log(this.allFavorites);
-      }
-    }
-  }*/
+  getCardClass(pokemon: Pokemon) {
+    return pokemon.types[0].type.name;
+  }
 }
