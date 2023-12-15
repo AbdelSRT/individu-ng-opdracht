@@ -72,7 +72,4 @@ export class PokemonsService {
     }
   }
 
-  toUpperCase(pokemon: string) {
-    return pokemon[0].toUpperCase() + pokemon.substring(1);
-  }
 }

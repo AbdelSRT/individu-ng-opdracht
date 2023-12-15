@@ -13,7 +13,7 @@
           (click)="pokemonsService.deleteFavoriet(favoriet)"
         >
           <mat-icon>delete</mat-icon></button
-        >{{ pokemonsService.toUpperCase(favoriet.name) }}</mat-list-item
+        >{{ favoriet.name | titlecase }}</mat-list-item
       >
     </mat-list>
   }
